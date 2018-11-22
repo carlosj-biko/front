@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'donacion',
+  'donacion--service-' ~ product.field_servicio_tipo|render|striptags|trim
+] %}
+<div {{ attributes.addClass(classes) }}>
+  <a href="{{ product_url }}" class="donacion__link">
+    {{ product.field_servicio_imagen_listado }}
+    <span class="donacion__link--overlay"></span>
+    <div class="donacion__content">
+      <div class="donacion__impacto u-font-semibold">
+        {{ product.field_servicio_impacto }}
+      </div>
+      <p class="donacion__title">
+        {{ product.title }}
+      </p>
+
+      <div class="u-display-flex u-justify-content-space-between u-align-items-center">
+        <div>
+          <span class="donacion__price">
+            {{ product.variation_price }}
+          </span>
+        </div>
+        <div class="donacion__arrow">
+          <img src="/{{ directory }}/assets/images/icons/arrow.svg" alt="arrow">
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

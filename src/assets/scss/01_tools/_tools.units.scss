@@ -1,0 +1,48 @@
+////
+/// @group units
+////
+
+/// Tamaño de fuente global
+/// @type number
+// Escala de tipografías y espacios verticales
+$modularscale: (
+  base: 16px,
+  ratio: 1.25
+) !default;
+
+/// Elimina la unidad del número
+/// @example - scss
+///   strip-unit(24px); // return 24
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+/// Convierte un valor en PX en su equivalente en REM
+@function rem($value) {
+  @if (type-of($value) == number) {
+    @if (unit($value) != 'px') {
+      @error '`#{$value}` needs to be a pixel value.';
+    }
+  } @else {
+    @error '`#{$value}` needs to be a number.';
+  }
+
+  @return $value / map-get($modularscale, base) * 1rem;
+}
+
+@function -rem($value) {
+  @return - rem($value);
+}
+
+/// Fuerza que `$number` esté entre `$min` y `$max`
+/// @param {Number} $number - Number to clamp
+/// @param {Number} $min - Minimum value
+/// @param {Number} $max - Maximum value
+/// @return {Number}
+@function clamp($number, $min, $max) {
+  @return min(max($number, $min), $max);
+}

@@ -1,0 +1,31 @@
+////
+/// @group positioning
+////
+
+/// Alinea verticalmente, horizontalmente o en ambas direcciones un elemento.
+///
+/// Escenarios soportados:
+/// * El padre tiene `height` fijado (no en %), el hijo puede ser `position: relative | absolute`
+/// * El padre tiene `height` fijado en % o no tiene fijado `height`, el hijo debe ser `position: absolute`. En este caso la altura del padre dársela su contenido ya que el hijo absoluto no afectará a la altura del padre.
+///
+/// `xy`: alinea vertical y horizontalmente | `x`: alinea horizontalmente | `y`: alinea verticalmente
+/// @param {string} $xy - Valores: `x` | `y` | `xy`
+@mixin center($xy:xy, $offsetX: 0, $offsetY: 0) {
+  @if $xy == xy {
+    left: 50% - $offsetY;
+    top: 50% - $offsetX;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50% - $offsetY;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50% - $offsetX;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}

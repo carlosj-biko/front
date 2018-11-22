@@ -1,0 +1,47 @@
+@import '../../assets/scss/01_tools/all';
+@import '../../assets/scss/02_settings/all';
+
+.p-guide {
+  background-color: #fff;
+  padding-top: 2rem;
+
+  ul {
+    list-style: circle;
+    padding-left: 2rem;
+  }
+
+  ul li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+    .p-guide__page-name {
+      text-align: center;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .p-guide__title {
+      margin-top: 2rem;
+      margin-bottom: spacing(base);
+      padding: rem(3px) rem(6px);
+      @include grid-undo-horizontal-spacings;
+
+      background-color: #999;
+      font-family: $headings-font-family;
+      color: #fff;
+      @include antialiased;
+      text-transform: uppercase;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .p-guide__subtitle {
+      margin-top: spacing(small);
+      margin-bottom: spacing(small);
+
+      font-family: $headings-font-family;
+      @include antialiased;
+      font-size: 1rem;
+      line-height: 1.5;
+    }

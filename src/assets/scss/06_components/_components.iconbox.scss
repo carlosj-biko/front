@@ -1,0 +1,31 @@
+.iconbox__item {
+  padding-right: spacing(extrasmall);
+}
+
+.iconbox__icon {
+  &.icon--medium {
+    margin-top: -spacing(tiny);
+  }
+}
+
+.iconbox__title {
+  margin-bottom: spacing(tiny);
+  @include media($tablet) {
+    margin-bottom: spacing(extrasmall);
+  }
+}
+
+.iconbox__block {
+  padding-top: spacing(small);
+}
+
+.iconbox__subtitle {
+  margin-bottom: spacing(tiny);
+  @include media($tablet) {
+    margin-bottom: spacing(small);
+  }
+}
+
+.iconbox__link {
+  color: $body-color;
+}

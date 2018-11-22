@@ -1,0 +1,34 @@
+.data {
+  &:not(:last-child) {
+    margin-bottom: spacing(base);
+  }
+}
+
+.data--small {
+  .data__text {
+    @include typi(normal);
+  }
+}
+
+.data--inverse {
+  color: $inverse-text-color;
+
+  .data__text {
+    color: #fff;
+  }
+}
+
+.data__label {
+  @include typi('small');
+  margin-bottom: spacing(tiny);
+  font-weight: $black-weight;
+}
+
+.data__text {
+  @include typi('h2');
+  font-weight: $black-weight;
+}
+
+.data__help-text {
+  @include typi('tiny');
+}

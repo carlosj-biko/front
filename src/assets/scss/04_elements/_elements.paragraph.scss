@@ -1,0 +1,5 @@
+p:not([class]) {
+  &:not(:last-child) {
+    margin-bottom: 1em * $line-height-base;
+  }
+}

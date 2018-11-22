@@ -1,0 +1,43 @@
+////
+/// @group forms
+////
+
+/// Da color de texto al placeholder del campo que incluya el mixin
+/// @param $color - Color del texto
+@mixin input-placeholder-color($color) {
+  &::placeholder {
+    /* Internet Explorer 10-11 */
+    color: $color;
+  }
+}
+
+/// Estilos base para controles de formularios y botones
+@mixin control() {
+  @include reset-appearance;
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  vertical-align: top;
+
+  height: $control-height;
+  padding: $control-padding-vertical $control-padding-horizontal;
+
+  line-height: $line-height-base;
+  border: 1px solid transparent;
+  box-shadow: none;
+
+  // States
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

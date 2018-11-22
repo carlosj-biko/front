@@ -1,0 +1,118 @@
+<header>
+  <div class="u-display-only-desktop-up u-background-color-secondary-95 u-padding-top-tiny u-padding-bottom-tiny">
+    <div class="container u-display-flex u-align-items-end u-justify-content-space-between">
+      <p class="header-text">Tienda online de Asociación Española Contra el Cáncer</p>
+
+      <div class="list--general-options">
+        <ul>
+          <li>
+            <a href="#" title="Mi pedido">Mi pedido</a>
+          </li>
+          <li>
+            <a href="#" title="Mi pedido">Contacto</a>
+          </li>
+          <li>
+            <a href="#" title="Mi pedido">FAQ's</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="u-padding-top u-padding-bottom">
+    <div class="container">
+      <div class="u-display-flex u-align-items-end u-justify-content-space-between">
+        <a href="/pages/home/" title="ir a la home">
+          <img src="/images/logo.png" alt="aecc" class="site-logo">
+        </a>
+        <nav class="u-display-only-desktop-up site-nav">
+          <ul>
+            <li>
+              <a href="/pages/servicio/">Servicios</a>
+            </li>
+            <li>
+              <a href="#" class="active">Tarjetas</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="cbp-spmenu-push">
+          <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+            <div class="cbp-spmenu__content">
+              <a id="closeRightPush">
+                <span class="icon hamburger__icon hamburger__icon--close">
+                  {% include icons/close.svg %}
+                </span>
+              </a>
+              <div class="cbp-spmenu__link">
+                <ul>
+                  <li>
+                    <a href="/">Inicio</a>
+                  </li>
+                  <li>
+                    <a href="/pages/servicio/">Servicios</a>
+                  </li>
+                  <li>
+                    <a href="#">Tarjetas</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="cbp-spsubmenu__link">
+                <ul>
+                  <li>
+                    <a href="#">Mi pedido</a>
+                  </li>
+                  <li>
+                    <a href="#">Contacto</a>
+                  </li>
+                  <li>
+                    <a href="#">F.A.Q,s</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <div class="main">
+              <section>
+                <a href="#">
+                  <img src="/images/icons/buscar.png" alt="buscar">
+                </a>
+                <!-- Class "cbp-spmenu-open" gets applied to menu -->
+                <button id="showRightPush">
+                  <span class="icon hamburger__icon hamburger__icon--hamburger">
+                    {% include icons/hamburger.svg %}
+                  </span>
+                </button>
+              </section>
+            </div>
+          </div>
+          <script src="/js/classie.js"></script>
+          <script>
+            var menuRight = document.getElementById('cbp-spmenu-s2'),
+              showRightPush = document.getElementById('showRightPush'),
+              closeRightPush = document.getElementById('closeRightPush'),
+              body = document.body;
+
+            showRightPush.onclick = function () {
+              classie.toggle(this, 'active');
+              classie.toggle(body, 'cbp-spmenu-push-toleft');
+              classie.toggle(menuRight, 'cbp-spmenu-open');
+              disableOther('showRightPush');
+            };
+            closeRightPush.onclick = function () {
+              classie.toggle(this, 'active');
+              classie.toggle(body, 'cbp-spmenu-push-toleft');
+              classie.toggle(menuRight, 'cbp-spmenu-open');
+              disableOther('closeRightPush');
+            };
+
+            function disableOther(button) {
+              if (button !== 'showRightPush') {
+                classie.toggle(showRightPush, 'disabled');
+              }
+            }
+          </script>
+        </div>
+      </div>
+
+    </div>
+</header>

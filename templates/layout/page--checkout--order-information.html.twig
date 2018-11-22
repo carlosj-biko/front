@@ -1,0 +1,90 @@
+<div {{ attributes.setAttribute('id', 'pg__c') }}>
+
+  {% include directory ~ '/templates/layout/includes/header.html.twig' %}
+
+  {% if page.pre_content %}
+    <div class="clearfix pre-content" id="pre-content">
+      <div class="cog--mq">
+        {{ page.pre_content }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="clearfix" id="main">
+    <div class="cog--mq mq-main">
+
+      {% if page.sidebar_first %}
+        <aside class="sidebar-first sidebars" id="sidebar-first">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+
+      <section id="content">
+
+        {% if breadcrumb or title or messages or tabs or action_links %}
+          <div id="content-header">
+
+            {{ breadcrumb }}
+
+            {% if page.highlighted %}
+              <div id="highlighted">{{ page.highlighted }}</div>
+            {% endif %}
+
+            {{ title_prefix }}
+
+            {% if title %}
+              <h1 class="title">{{ title }}</h1>
+            {% endif %}
+
+            {{ title_suffix }}
+            {{ messages }}
+            {{ page.help }}
+
+            {% if tabs %}
+              <div class="tabs">{{ tabs }}</div>
+            {% endif %}
+
+            {% if action_links %}
+              <ul class="action-links">{{ action_links }}</ul>
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {#<div class="u-padding-top-huge u-padding-bottom-huge u-text-center">
+            <ul class="list-pasos">
+              <li class="list-pasos__item do">
+                <span>1</span>
+                <p>Acceder como</p>
+              </li>
+              <li class="list-pasos__item on">
+                <span>2</span>
+                <p>Tus datos</p>
+              </li>
+              <li class="list-pasos__item off">
+                <span>3</span>
+                <p>Resumen y pago</p>
+              </li>
+            </ul>
+            <p class="u-display-only-mobile u-text-center u-padding-top u-font-bold">Tus datos</p>
+        </div>#}
+
+        <div id="content-area">
+          {{ page.content }}
+        </div>
+
+        {{ feed_icons }}
+      </section>
+
+      {% if page.sidebar_second %}
+        <aside class="sidebar-second sidebars" id="sidebar-second">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+    </div>
+  </div>
+
+  {{ page.post_content }}
+
+  {% include directory ~ '/templates/layout/includes/footer.html.twig' %}
+</div>

@@ -1,0 +1,14 @@
+.page-body {
+  @include spacer-padding;
+  background-color: #fff;
+  @include media($only-mobile) {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.page-body__intro {
+  @include spacer-margin-bottom;
+  @include typi('large');
+}

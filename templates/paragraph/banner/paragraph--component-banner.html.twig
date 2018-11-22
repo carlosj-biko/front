@@ -1,0 +1,43 @@
+{% set image_uri = file_url(content.field_component_banner_imagen.0['#item'].entity.uri.value) %}
+{% set enlace_banner = content.field_component_banner_enlace.0['#url'] %}
+{% set texto_banner = content.field_component_banner_enlace.0['#title'] %}
+{% set class_slide = "slide slide--servicio" ~ content.field_component_banner_tipo|render|striptags|trim %}
+{% set banner_type = content.field_component_banner_tipo_bann['#items'].getString() %}
+
+{% if banner_type == "width100" %}
+  <div{{ attributes.addClass(class_slide) }}>
+    <div class="slide__img" style="background-image:url({{ image_uri }});top left no-repeat;background-size:cover;">
+    </div>
+    <div class="container">
+      <div class="roll">
+        <div class="col-lg-6 offset-lg-6 ">
+          <div class="slide__content u-background-transparent@desktop">
+            <h1 class="slide__title">
+              {{ content.field_component_banner_titulo }}
+            </h1>
+            <div class="slide__subtitle u-text-center">
+              {{ content.field_component_banner_subtitulo }}
+            </div>
+            <div class="u-text-center u-margin-top">
+              <a class="button" href="{{ enlace_banner }}">{{ texto_banner }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% elseif banner_type == "right" %}
+  <div class="slide-inside__img-right"
+       style="background:#72933a  url({{ image_uri }}) no-repeat;background-position: right;background-size:50%;">
+    <div class="slide-inside">
+      <div class="container">
+        <div class="slide-inside__text">
+          <p class="u-font-size-h2 u-font-bold u-margin-bottom-medium ">{{ content.field_component_banner_titulo }}</p>
+          {{ content.field_component_banner_subtitulo }}
+          <a class="button button--secondary u-margin-bottom-medium scroll-to-anchor"
+             href="{{ enlace_banner }}">{{ texto_banner }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

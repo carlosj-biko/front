@@ -1,0 +1,18 @@
+.nav-inline {
+  display: flex;
+}
+
+  .nav-inline__item {
+    &:not(:first-child) {
+      margin-left: spacing(medium);
+    }
+  }
+
+.nav-inline--small {
+  @include typi('small');
+
+  .nav-inline__item {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

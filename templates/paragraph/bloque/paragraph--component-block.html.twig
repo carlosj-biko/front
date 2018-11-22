@@ -1,0 +1,17 @@
+<div{{ attributes.addClass("u-padding-top-large u-padding-bottom-large u-padding-top-huge@tablet u-padding-bottom-huge@tablet u-padding-top-extrahuge@desktop u-padding-bottom-extrahuge@desktop") }}>
+  <div class="container">
+    {% if content.field_component_block_titulo|render %}
+      <p class="u-font-brand u-text-center u-font-size-h3 u-font-bold u-margin-bottom-medium">{{ content.field_component_block_titulo	}}</p>
+    {% endif %}
+
+    {% if content.field_component_block_subtitulo|render %}
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="u-font-secondary-color-40 u-font-size-normal u-text-center u-margin-bottom-large">{{ content.field_component_block_subtitulo	}}</div>
+        </div>
+      </div>
+    {% endif %}
+
+    {{ content.field_block }}
+  </div>
+</div>

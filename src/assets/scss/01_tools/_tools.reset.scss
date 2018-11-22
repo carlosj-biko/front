@@ -1,0 +1,82 @@
+////
+/// @group reset
+////
+
+/// Normaliza los estilos por defecto de un `input[type=button]` o `button`
+@mixin reset-button() {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/// Normaliza los estilos por defecto de una lista `ul` o `ol`
+@mixin reset-list() {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/// Elimina el aspecto visual de un elemento
+@mixin reset-appearance() {
+  -moz-appearance: none; /* stylelint-disable-line */
+  -webkit-appearance: none; /* stylelint-disable-line */
+  // appearance: none;
+}
+
+/// Elimina todo estilo del select box para personalizarlo.
+/// @link https://gist.github.com/mojaray2k/569305b307ff10f44176
+/// @link http://output.jsbin.com/telegu/1
+/// @param {integer} $custom-height [$input-height] - Altura del select
+@mixin reset-select($custom-height) {
+  position: relative;
+  overflow: hidden;
+
+  select {
+    width: 100%;
+
+    html.ie9 & { /* stylelint-disable-line */
+      /* Make sure the select is wider than the container so we can clip the arrow */
+      width: calc(100% + 40px);
+      max-width: calc(100% + 40px);
+      min-width: calc(100% + 40px);
+    }
+
+    font-family: $font-family-base;
+
+    /* Remove select styling */
+    @include reset-appearance();
+    /* Ugly Firefox way of doing it */
+    text-indent: 0.01px;
+    text-overflow: '';
+    /* Magic font size number to prevent iOS text zoom */
+    //font-size:16px;
+    //font-weight: bold;
+    background: none;
+    border: 0;
+    //color: #444;
+    outline: none;
+    /* Padding works surpringly well */
+    //padding: 0 ($padding-base-horizontal + 30) 0  $padding-base-horizontal;
+    //font-family: helvetica, sans-serif;
+    line-height: 1.2;
+    margin: 0;
+    height: $custom-height - rem(2px);
+  }
+
+  /* This hides native dropdown button arrow in IE */
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* Focus style */
+  select:focus {
+    outline: none;
+  }
+
+  /* This hides focus around selected option in FF */
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+}

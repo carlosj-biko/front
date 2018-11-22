@@ -1,0 +1,10 @@
+.u-img-position {
+  position: absolute;
+  top: -40px;
+
+   @include media($only-mobile-tablet) {
+     position: relative;
+     top: 60px;
+     margin-top: spacing(base);
+   }
+}

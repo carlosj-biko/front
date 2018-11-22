@@ -1,0 +1,189 @@
+.slide {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid $secondary-color--95;
+  @include media($desktop) {
+    height: rem(450px);
+    border-bottom: 0;
+  }
+}
+
+.slide__img {
+  position: relative;
+  height: rem(223px);
+  z-index: 1;
+  content: '.';
+  @include media($tablet) {
+    height: rem(354px);
+  }
+  @include media($desktop) {
+    height: rem(450px);
+    margin-bottom: rem(-450px);
+  }
+}
+
+.slide__content {
+  z-index: 9;
+  color: $secondary-color--20;
+  position: relative;
+  display: flex;
+  margin-top: spacing(base);
+  margin-bottom: spacing(base);
+  flex-direction: column;
+  justify-content: center;
+
+  @include media($desktop) {
+    height: rem(450px);
+    color: #fff;
+    padding: 0 spacing(xlarge);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.slide__content--cupon {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-content: left !important;
+
+  .slide__title--cupon {
+    align-self: flex-end;
+  }
+}
+
+.slide__title {
+  @include typi('h2');
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: spacing(medium);
+
+  span {
+    color: #fff;
+    background: $service-color--2;
+  }
+}
+
+.slide__subtitle {
+  p {
+    @include typi('normal');
+  }
+}
+
+.slide__title--cupon {
+  max-width: 65%;
+  text-align: left;
+  margin-bottom: spacing(huge);
+
+   @include media($only-mobile-tablet) {
+    max-width: 100%;
+    text-align: center;
+    margin-top: spacing(base);
+   }
+}
+
+.slide__text {
+  @include typi('normal');
+  text-align: center;
+}
+
+.slide--interior {
+  .slide__title {
+    span {
+      padding: rem(6px);
+    }
+  }
+}
+
+.slide-inside {
+
+  color: #fff;
+
+  @include media($tablet) {
+    background-position: right;
+    background-size: 50%;
+  }
+}
+
+.slide-inside__img {
+  display: block;
+  width: 100%;
+  @include media($tablet) {
+    display: none;
+  }
+}
+
+.slide-inside__img-right {
+    @include media($only-mobile-tablet) {
+      background: $brand-color !important;
+    }
+
+    @media only screen and (min-width: 900px) and (max-width: 1400px) {
+    background-size: auto 100% !important;
+   }
+}
+
+.slide-inside__text {
+   padding: spacing(huge) 0 0;
+   background: $brand-color;
+   width: 100%;
+   height: 100%;
+
+  @include media($tablet) {
+     padding: spacing(extrahuge) 0;
+  }
+
+  @include media($desktop) {
+    width: 50%;
+  }
+
+  p {
+    width: 90% !important;
+  }
+}
+
+.slide.slide--servicio1 {
+  .slide__title span {
+    background: $service-color--1;
+    padding: 0 3px;
+  }
+
+  .button {
+    background-color: $service-color--1;
+  }
+}
+
+.slide.slide--servicio2 {
+  .slide__title span {
+    background: $service-color--2;
+    padding: 0 3px;
+  }
+
+  .button {
+    background-color: $service-color--2;
+
+    &:hover {
+        background-color: darken($service-color--2, 20%);
+    }
+  }
+}
+
+.slide.slide--servicio3 {
+  .slide__title span {
+    background: $service-color--3;
+  }
+
+  .button {
+    background-color: $service-color--3;
+  }
+}
+
+.slide.slide--servicio4 {
+  .slide__title span {
+    background: $service-color--4;
+  }
+
+  .button {
+    background-color: $service-color--4;
+  }
+}

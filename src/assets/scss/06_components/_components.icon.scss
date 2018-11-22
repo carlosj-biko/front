@@ -1,0 +1,41 @@
+$icon-medium: spacing(base);
+$icon-medium-size: spacing(medium);
+$icon-medium-large: spacing(large);
+$icon-medium-small: spacing(small);
+
+.icon {
+  @include size($icon-medium);
+  display: inline-flex;
+  color: $orange;
+
+  svg {
+    @include size(100%);
+    fill: currentColor;
+  }
+}
+
+.icon--medium {
+  @include size($icon-medium-size);
+}
+
+.icon--large {
+  @include size($icon-medium-large);
+}
+
+.icon--large\@tablet {
+  @include media($tablet) {
+    @include size($icon-medium-large);
+  }
+}
+
+.icon--small {
+  @include size($icon-medium-small);
+}
+
+.main a img {
+  vertical-align: baseline;
+}
+
+.cbp-spmenu .icon svg {
+  fill: #fff;
+}

@@ -1,0 +1,297 @@
+.path--checkout {
+  .button {
+    text-transform: none;
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid $brand-color;
+  }
+
+  .form-previous {
+    text-transform: none;
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: $body-bg;
+    color: $secondary-color--20;
+    border: 1px solid $secondary-color--20;
+    text-decoration: none;
+    top: 1px;
+
+      &:hover,
+      &.hover,
+      &:focus,
+      &.focus,
+      &:active,
+      &.active {
+        color: $body-bg;
+        background-color: $secondary-color--20;
+      }
+  }
+
+  .checkout-payment {
+    .form-previous {
+      @include media($only-mobile-tablet) {
+      position: relative;
+      top: 30px;
+      display: inline-block;
+      }
+    }
+  }
+
+  legend {
+    @include typi(h4);
+    color: $brand-color;
+    font-weight: 600;
+    margin-bottom: spacing(extrasmall);
+     @include media($only-mobile-tablet) {
+       padding-top: spacing(small);
+     }
+  }
+
+  .form-item {
+    margin-bottom: spacing(small);
+  }
+
+  .checkout-pane-shipping-information{
+    margin-bottom:0;
+  }
+
+  .checkout-pane-aecc-adyen-billing-address-pane  {
+    legend {
+      display: none;
+    }
+  }
+
+  .checkout-order_information {
+  .form-item {
+    margin-right: 0;
+    position: relative;
+
+    //   label {
+    //   font-weight: 600;
+    //   position: absolute;
+    //   top: 15px;
+    //   left: 5px;
+    //   color: $secondary-color--80;
+    //   z-index: 0;
+    // }
+
+    // input:not(.button),
+    // select,
+    // textarea {
+    //   background: none !important;
+    //   position: relative;
+    //   top: 0;
+    //   left: 0;
+    //   z-index: 1;
+    //   margin-bottom: 0;
+
+    //   &:active,
+    //   &:focus,
+    //   &:valid  {
+
+    //     background: #fff !important;
+    //     z-index: 2;
+    //   }
+    // }
+
+    .form-type-checkbox,
+    .form-type-select {
+      label {
+        position: relative;
+        top: -1px;
+        left: 0;
+        color: $secondary-color--50;
+        max-width: 80%;
+      }
+    }
+  }
+
+  .document-group {
+      display: flex;
+      align-items: flex-end;
+
+      .form-item {
+        margin-right: spacing(small);
+      }
+    }
+  }
+
+  .help-block {
+    font-size: 13px;
+    margin-top: 8px;
+    max-width: 70%;
+    display: block;
+    color: $secondary-color--40;
+  }
+
+  .passwd-reset {
+    margin-top: spacing(small);
+    display: block;
+    font-weight: 600;
+  }
+}
+
+.commerce-checkout-flow {
+  h3 {
+    @include typi(h4);
+    color: $brand-color;
+    font-weight: 600;
+    margin-bottom: spacing(small);
+  }
+
+  table {
+     border-bottom: 1px solid $secondary-color--80;
+  }
+
+  thead {
+    display: none;
+  }
+
+  .form-item-sidebar-commerce-checkout-pane-donation-quantity {
+    margin: 0;
+    flex-grow: 2;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+}
+
+  .block-donation {
+    display: block;
+    text-align: center;
+    background: $brand-color--75;
+    padding:0 0 spacing(medium);
+    margin: spacing(base) 0 spacing(medium);
+
+    @include media($only-mobile) {
+        display: block;
+
+        .webform-button--submit {
+          margin-left: 0;
+        }
+    }
+  }
+
+  .text_donation-text {
+    color: #fff;
+    font-weight: 600;
+    @include typi(h3);
+    margin-bottom: spacing(medium);
+    background: $brand-color;
+    padding: spacing(base) 0;
+
+    @include media($only-mobile) {
+      max-width: 100%;
+    }
+  }
+
+  .text_donation-second {
+     @include typi(normal);
+     margin-bottom: spacing(medium);
+  }
+
+  .block-donation__input {
+    display: flex;
+    justify-content: center;
+
+    .form-item {
+      width: 25% !important;
+      flex-grow: 0 !important;
+
+      input {
+        margin: 0 !important;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    .webform-button--submit {
+      @extend .button--small;
+      height: 40px;
+      margin-left: spacing(base);
+      width: 30%;
+      font-size: 16px;
+      flex-grow: 0;
+    }
+  }
+
+ @include media($desktop) {
+  .layout-checkout-form {
+
+      text-align: center;
+
+      .form-items {
+           max-width: 50%;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+  }
+}
+
+.checkout-pago {
+  display: block;
+  text-align: left;
+}
+
+.address-container-inline {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: spacing(small);
+
+  .form-item {
+    margin-bottom: 0;
+    margin-right: spacing(small) !important;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .form-text {
+    margin-top: 0;
+  }
+
+  @include media($only-mobile-tablet) {
+    justify-content: flex-start;
+  }
+
+  @include media($only-mobile) {
+    display: block;
+
+    .form-item {
+        display: block !important;
+        width: 100%;
+        margin-bottom: spacing(small);
+    }
+  }
+}
+
+.layout-region-checkout-footer {
+  float: none;
+  margin-bottom: spacing(base);
+  width: auto;
+  clear: both;
+}
+
+.layout-region-checkout-ations {
+   width: auto;
+  clear: both;
+   float: none;
+}
+
+.edit-order-information {
+  color: $secondary-color--60;
+  font-weight: normal;
+  font-size: 20px;
+  background: url('/themes/custom/front/assets/images/editar.svg') no-repeat bottom left;
+  padding-left: 25px;
+}

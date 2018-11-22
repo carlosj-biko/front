@@ -1,0 +1,39 @@
+////
+/// @group icon-font
+////
+
+/// Estilos base cuando el contenido va a ser un caracter de fuente de icono
+@mixin icon-font-base() {
+  font-family: $icon-font-family;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  speak: none;
+  vertical-align: middle;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/// Incluye en `:before` un icono de fuente
+/// @param $icon-key - Caracter del icono de la fuente
+@mixin icon-font-before($icon-key) {
+  &::before {
+    @include icon-font-base();
+    content: $icon-key;
+    @content;
+  }
+}
+
+/// Incluye en `:after` un icono de fuente
+/// @param $icon-key - Caracter del icono de la fuente
+@mixin icon-font-after($icon-key) {
+  &::after {
+    @include icon-font-base();
+    content: $icon-key;
+    @content;
+  }
+}

@@ -1,0 +1,22 @@
+name: front
+type: theme
+description: 'Biko D8 starter theme'
+core: 8.x
+base theme: cog
+libraries:
+  - front/global_styles
+regions:
+  pre_header: 'Pre header'
+  header: Header
+  pre_content: 'Pre content'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  post_content: 'Post content'
+  footer: Footer
+  post_footer: 'Post footer'
+ckeditor_stylesheets:
+  - assets/css/styles.css
+
+entity_print:
+  all: 'front/print-styling'

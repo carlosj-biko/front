@@ -1,0 +1,19 @@
+.title1 {
+  @include title-style;
+  @include typi('h1');
+}
+
+.title2 {
+  @include title-style;
+  @include typi('h2');
+}
+
+.title3 {
+  @include title-style;
+  @include typi('h3');
+}
+
+.title4 {
+  @include title-style;
+  @include typi('h4');
+}

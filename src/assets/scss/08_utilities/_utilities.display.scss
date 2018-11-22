@@ -1,0 +1,62 @@
+.u-display-none {
+    display: none !important;
+}
+
+.u-display-only-mobile-small {
+  @include media($mobile-large) {
+    display: none !important;
+  }
+}
+
+.u-display-only-mobile {
+  @include media($tablet) {
+    display: none !important;
+  }
+}
+
+.u-display-only-tablet-up {
+  @include media($only-mobile) {
+    display: none !important;
+  }
+}
+
+.u-display-only-desktop-up {
+  @include media($only-mobile-tablet) {
+    display: none !important;
+  }
+}
+
+.u-display-only-desktop-large-up {
+  @include media($only-down-desktop) {
+    display: none !important;
+  }
+}
+
+.u-display-only-desktop-down {
+  @include media($desktop-large) {
+    display: none !important;
+  }
+}
+
+.u-display-only-tablet-down {
+  @include media($desktop) {
+    display: none !important;
+  }
+}
+
+.u-display-inline-block {
+  display: inline-block !important;
+}
+
+.u-display-inline {
+  display: inline !important;
+}
+
+.u-overflow-hidden {
+  overflow: hidden !important;
+}
+
+.u-zindex-20 {
+  position: relative;
+  z-index: 20;
+}

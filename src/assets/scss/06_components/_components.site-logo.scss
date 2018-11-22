@@ -1,0 +1,6 @@
+.site-logo {
+  @include size(auto, rem(17px));
+  @include media($desktop) {
+    height: rem(39px);
+  }
+}

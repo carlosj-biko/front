@@ -1,0 +1,33 @@
+@import 'tools.units';
+
+////
+/// @group color
+////
+
+/// Oscurece un color hacia el negro
+/// @param $color - Color a oscurecer
+/// @param {number} $percent - Porcentaje a oscurecer el color
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+/// Aclara un color hacia el blanco
+/// @param $color - Color a aclarar
+/// @param {number} $percent - Porcentaje a aclarar el color
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
+/// Devuelve el color negro con un % de opacidad
+/// @example -scss
+///   background-color: black(50%);
+@function black($opacity) {
+  @return rgba(black, strip-unit($opacity) / 100);
+}
+
+/// Devuelve el color blanco con un % de opacidad
+/// @example -scss
+///   background-color: white(50%);
+@function white($opacity) {
+  @return rgba(white, strip-unit($opacity) / 100);
+}

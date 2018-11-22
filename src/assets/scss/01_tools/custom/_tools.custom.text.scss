@@ -1,0 +1,5 @@
+/// Utilizar para aplicar bold al texto, mejora la lectura
+@mixin antialiased() {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

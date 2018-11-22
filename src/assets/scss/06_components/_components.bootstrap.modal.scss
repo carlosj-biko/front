@@ -1,0 +1,17 @@
+.modal-content {
+  border-radius: 0;
+  box-shadow: $shadow-large;
+}
+
+.modal__title {
+  margin-bottom: spacing(base);
+  @include media($tablet) {
+    margin-bottom: spacing(medium);
+  }
+}
+
+.modal-body {
+  @include media($tablet) {
+    padding: $modal-inner-padding-tablet;
+  }
+}

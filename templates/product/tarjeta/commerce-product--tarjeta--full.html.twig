@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set images = product_entity.field_images %}
+{% set thumbnail = product_entity.field_thumbnail %}
+{% set view_mode = product.title['#view_mode'] %}
+<div class="container u-padding-top-large u-padding-bottom-large">
+    <p class="u-font-brand u-font-size-large u-font-bold u-margin-bottom-medium">{{ 'Por último, personaliza tu mensaje' | t }}</p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="variations-wrapper">
+                {{ product.variations }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            {# CARD PREVIEW #}
+            {# <img src="/images/tarjeta-big.png" alt="tarjeta"> #}
+            <span id="flipper-control" data-target="#card-viewer-flipper" class="button button--secondary"> {{  'Dale la vuelta' | t }} </span>
+
+            <div id="card-viewer-flipper" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
+                <div class="flipper">
+
+                    <div class="front drop-shadow lifted">
+                        {{ product.field_tarjeta_back }}
+                    </div>
+                    <div class="back drop-shadow lifted">
+                        {{ product.field_tarjeta_front }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.header__logo-menu {
+  border-bottom: 1px solid $secondary-color--80 !important;
+
+  .hamburger__icon {
+    width: 30px;
+    height: 30px;
+
+    svg {
+      width: 100%;
+    }
+  }
+
+  #showRightPush {
+    background: #fff;
+    border: 0;
+  }
+}
+
+.header__logo {
+  img {
+     width: 100%;
+     height: auto;
+  }
+}
+
+.pre-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pre-header-text {
+  @include typi('tiny');
+
+  color: $secondary-color--40;
+}

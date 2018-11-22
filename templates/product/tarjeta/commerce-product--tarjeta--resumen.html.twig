@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+    set classes = [
+        'tarjeta__item',
+        'customizer-select'
+    ]
+%}
+<div {{ attributes.addClass(classes) }} data-cardId="{{ product_entity.id }}">
+    {{ product.field_tarjeta_front }}
+</div>
+{#
+<div {{ attributes.addClass(classes)  }}">
+  <a href="{{ product_url }}" class="donacion__link"></a>
+  {{ product.field_servicio_imagen }}
+  <div class="donacion__arrow">
+    <img src="/{{ directory }}/assets/images/icons/arrow.svg" alt="arrow">
+  </div>
+  <div class="donacion__content">
+    <div class="donacion__title">
+      {{ product.title }}
+    </div>
+    <div class="donacion__price">
+      {{ product.variation_price }}
+    </div>
+  </div>
+</div>
+#}

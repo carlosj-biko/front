@@ -1,0 +1,40 @@
+.tag {
+  display: inline-block;
+  margin-bottom: spacing(tiny);
+  padding: spacing(tiny) spacing(extrasmall);
+
+  font-size: ms(0);
+  font-weight: bold;
+  color: $orange;
+  background-color: $orange-light;
+
+  cursor: pointer;
+  transition: $component-transition;
+  white-space: nowrap;
+
+  &:hover,
+  &.hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &.hover {
+    background-color: $orange-hover;
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $orange-focus;
+    box-shadow: 0 0 0 $component-focus-width $component-focus-color;
+  }
+
+  &:active,
+  &.active {
+    background-color: $orange-active;
+  }
+}

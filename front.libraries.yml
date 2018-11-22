@@ -1,0 +1,22 @@
+global_styles:
+  version: VERSION
+  css:
+    theme:
+      assets/css/styles.css: {}
+  js:
+     assets/js/vendor.js: { weight: -1000 }
+     assets/js/app.js: {}
+     assets/js/classie.js: {}
+     js/header_responsive.js: {}
+     js/open_pack_cupon.js: {}
+     js/label_to_placeholder.js: {}
+     js/scroll_to_anchor.js: {}
+  dependencies:
+  - core/jquery.once
+  - core/drupal
+  - core/drupalSettings
+
+print-styling:
+  css:
+    theme:
+      assets/css/styles.css: {}

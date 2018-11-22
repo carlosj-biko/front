@@ -1,0 +1,16 @@
+.separator {
+  margin-top: spacing(small);
+  margin-bottom: spacing(small);
+
+  border: 0;
+  height: 1px;
+  background-color: $component-border-color;
+  @include media($tablet) {
+    margin-top: spacing(base);
+    margin-bottom: spacing(base);
+  }
+}
+
+.separator--inverse {
+  background-color: rgba(#fff, 0.3);
+}

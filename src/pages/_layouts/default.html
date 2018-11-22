@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html class="no-js">
+{% include head.html %}
+
+<body>
+  {% include site-header.html %}
+  <main>
+    {{ content }}
+  </main>
+  {% include site-footer.html %}
+  <script src="/assets/js/vendor.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script>
+    function desplegar() {
+      document.getElementById("pack").style.bottom = "0px";
+      document.getElementById("button-pack").style.bottom = "-200px";
+    }
+  </script>
+</body>
+
+</html>

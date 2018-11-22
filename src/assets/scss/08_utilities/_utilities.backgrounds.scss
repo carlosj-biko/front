@@ -1,0 +1,45 @@
+.u-background-color-brand {
+  background-color: $brand-color !important;
+}
+
+.u-background-color-secondary {
+  background-color: $secondary-color !important;
+}
+
+.u-background-color-secondary-20 {
+  background-color: $secondary-color--20 !important;
+}
+
+.u-background-color-secondary-95 {
+  background-color: $secondary-color--95 !important;
+}
+
+.u-background-transparent {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.u-background-transparent\@desktop {
+  @include media($desktop) {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.u-background-color-service-1 {
+  background-color: $service-color--1;
+  padding: rem(6px) rem(8px);
+}
+
+.u-background-color-service-2 {
+  background-color: $service-color--2;
+  padding: rem(6px) rem(8px);
+}
+
+.u-background-color-service-3 {
+  background-color: $service-color--3;
+  padding: rem(6px) rem(8px);
+}
+
+.u-background-color-service-4 {
+  background-color: $service-color--4;
+  padding: rem(6px) rem(8px);
+}

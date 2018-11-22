@@ -1,0 +1,501 @@
+// Genera estilos de utilidad de márgenes por cada tamaño de $spacing
+$directions: (
+  '-top',
+  '-right',
+  '-bottom',
+  '-left'
+);
+
+@each $size in map-keys($spacing) {
+  @each $direction in $directions {
+    @if $size == 'base' {
+      .u-padding#{$direction} {
+        padding#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-padding#{$direction} {
+        padding#{$direction}: -map-get($spacing, $size) !important;
+      }
+    } @else {
+      .u-padding#{$direction}-#{$size} {
+        padding#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-padding#{$direction}-#{$size} {
+        padding#{$direction}: -map-get($spacing, $size) !important;
+      }
+    }
+  }
+}
+
+@each $size in map-keys($spacing) {
+  .u-padding-#{$size} {
+    padding: map-get($spacing, $size) !important;
+  }
+
+  .u-undo-padding-#{$size} {
+    padding: -map-get($spacing, $size) !important;
+  }
+}
+
+@each $direction in $directions {
+  .u-padding#{$direction}-none {
+    padding#{$direction}: 0 !important;
+  }
+}
+
+.u-padding-horizontal-none\@only-mobile {
+  @include media($only-mobile) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.u-padding {
+  padding: spacing(base) !important;
+}
+
+.u-padding\@only-mobile {
+  @include media($only-mobile) {
+    padding: spacing(base) !important;
+  }
+}
+
+.u-padding-large\@tablet {
+  @include media($tablet) {
+    padding: spacing(large) !important;
+  }
+}
+
+.u-padding-extrahuge\@tablet {
+  @include media($tablet) {
+    padding: spacing(extrahuge);
+  }
+}
+
+.u-padding-horizontal {
+  padding-left: spacing(base) !important;
+  padding-right: spacing(base) !important;
+}
+
+.u-padding-horizontal-giant\@tablet {
+  @include media($tablet) {
+    padding-left: spacing(giant) !important;
+    padding-right: spacing(giant) !important;
+  }
+}
+
+.u-padding-vertical-medium {
+  padding-top: spacing(medium) !important;
+  padding-bottom: spacing(medium) !important;
+}
+
+.u-padding-vertical-large {
+  padding-top: spacing(large) !important;
+  padding-bottom: spacing(large) !important;
+}
+
+.u-padding-vertical-extrahuge\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(extrahuge) !important;
+    padding-bottom: spacing(extrahuge) !important;
+  }
+}
+
+.u-padding-top\@only-mobile {
+  @include media($only-mobile) {
+    padding-top: spacing(base) !important;
+  }
+}
+
+.u-padding-top-extrasmall\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-top-small\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(small) !important;
+  }
+}
+
+.u-padding-top\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(base) !important;
+  }
+}
+
+.u-padding-top-large\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(large) !important;
+  }
+}
+
+.u-padding-bottom-extrasmall\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-bottom-small\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(small) !important;
+  }
+}
+
+.u-padding-bottom\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(base) !important;
+  }
+}
+
+.u-padding-bottom\@desktop-large {
+  @include media($desktop-large) {
+    padding-bottom: spacing(base) !important;
+  }
+}
+
+.u-padding-bottom-huge\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(huge) !important;
+  }
+}
+
+.u-padding-top-large\@only-mobile {
+  @include media($only-mobile) {
+    padding-top: spacing(large) !important;
+  }
+}
+
+.u-padding-top-site-header {
+  @include media($tablet) {
+    padding-top: $site-header-height-tablet;
+  }
+  @include media($desktop-large) {
+    padding-top: $site-header-height-desktop-large;
+  }
+}
+
+/* Padding-top breackpoints */
+.u-padding-top-tiny {
+  padding-top: spacing(tiny) !important;
+}
+
+.u-padding-top-tiny\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(tiny) !important;
+  }
+}
+
+.u-padding-top-tiny\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(tiny) !important;
+  }
+}
+
+.u-padding-top-extrasmall {
+  padding-top: spacing(extrasmall) !important;
+}
+
+.u-padding-top-extrasmall\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-top-extrasmall\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-top-small {
+  padding-top: spacing(small) !important;
+}
+
+.u-padding-top-small\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(small) !important;
+  }
+}
+
+.u-padding-top-small\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(small) !important;
+  }
+}
+
+.u-padding-top-base {
+  padding-top: spacing(base) !important;
+}
+
+.u-padding-top-small\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(base) !important;
+  }
+}
+
+.u-padding-top-base\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(base) !important;
+  }
+}
+
+.u-padding-top-medium {
+  padding-top: spacing(medium) !important;
+}
+
+.u-padding-top-medium\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(medium) !important;
+  }
+}
+
+.u-padding-top-medium\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(medium) !important;
+  }
+}
+
+.u-padding-top-large {
+  padding-top: spacing(large) !important;
+}
+
+.u-padding-top-large\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(large) !important;
+  }
+}
+
+.u-padding-top-large\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(large) !important;
+  }
+}
+
+.u-padding-top-huge {
+  padding-top: spacing(huge) !important;
+}
+
+.u-padding-top-huge\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(huge) !important;
+  }
+}
+
+.u-padding-top-huge\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(huge) !important;
+  }
+}
+
+.u-padding-top-extrahuge {
+  padding-top: spacing(extrahuge) !important;
+}
+
+.u-padding-top-extrahuge\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(extrahuge) !important;
+  }
+}
+
+.u-padding-top-extrahuge\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(extrahuge) !important;
+  }
+}
+
+.u-padding-top-giant {
+  padding-top: spacing(giant) !important;
+}
+
+.u-padding-top-giant\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(giant) !important;
+  }
+}
+
+.u-padding-top-giant\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(giant) !important;
+  }
+}
+
+.u-padding-top-extragiant {
+  padding-top: spacing(extragiant) !important;
+}
+
+.u-padding-top-extragiant\@tablet {
+  @include media($tablet) {
+    padding-top: spacing(extragiant) !important;
+  }
+}
+
+.u-padding-top-extragiant\@desktop {
+  @include media($desktop) {
+    padding-top: spacing(extragiant) !important;
+  }
+}
+
+/* Padding-bottom breackpoints */
+
+.u-padding-bottom-tiny {
+  padding-bottom: spacing(tiny) !important;
+}
+
+.u-padding-bottom-tiny\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(tiny) !important;
+  }
+}
+
+.u-padding-bottom-tiny\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(tiny) !important;
+  }
+}
+
+.u-padding-bottom-extrasmall {
+  padding-bottom: spacing(extrasmall) !important;
+}
+
+.u-padding-bottom-extrasmall\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-bottom-extrasmall\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-bottom-small {
+  padding-bottom: spacing(small) !important;
+}
+
+.u-padding-bottom-small\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-bottom-small\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(extrasmall) !important;
+  }
+}
+
+.u-padding-bottom-base {
+  padding-bottom: spacing(base) !important;
+}
+
+.u-padding-bottom-base\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(base) !important;
+  }
+}
+
+.u-padding-bottom-base\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(base) !important;
+  }
+}
+
+.u-padding-bottom-medium {
+  padding-bottom: spacing(medium) !important;
+}
+
+.u-padding-bottom-medium\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(medium) !important;
+  }
+}
+
+.u-padding-bottom-medium\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(medium) !important;
+  }
+}
+
+.u-padding-bottom-large {
+  padding-bottom: spacing(large) !important;
+}
+
+.u-padding-bottom-large\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(large) !important;
+  }
+}
+
+.u-padding-bottom-large\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(large) !important;
+  }
+}
+
+.u-padding-bottom-huge {
+  padding-bottom: spacing(huge) !important;
+}
+
+.u-padding-bottom-huge\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(huge) !important;
+  }
+}
+
+.u-padding-bottom-huge\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(huge) !important;
+  }
+}
+
+.u-padding-bottom-extrahuge {
+  padding-bottom: spacing(extrahuge) !important;
+}
+
+.u-padding-bottom-extrahuge\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(extrahuge) !important;
+  }
+}
+
+.u-padding-bottom-extrahuge\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(extrahuge) !important;
+  }
+}
+
+.u-padding-bottom-giant {
+  padding-bottom: spacing(giant) !important;
+}
+
+.u-padding-bottom-giant\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(giant) !important;
+  }
+}
+
+.u-padding-bottom-giant\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(giant) !important;
+  }
+}
+
+.u-padding-bottom-extragiant {
+  padding-bottom: spacing(extragiant) !important;
+}
+
+.u-padding-bottom-extragiant\@tablet {
+  @include media($tablet) {
+    padding-bottom: spacing(extragiant) !important;
+  }
+}
+
+.u-padding-bottom-extragiant\@desktop {
+  @include media($desktop) {
+    padding-bottom: spacing(extragiant) !important;
+  }
+}

@@ -1,0 +1,256 @@
+// Genera estilos de utilidad de márgenes por cada tamaño de $spacing
+$directions: ('-top', '-right', '-bottom', '-left');
+
+@each $size in map-keys($spacing) {
+  @each $direction in $directions {
+    @if $size == 'base' {
+      .u-margin#{$direction} {
+        margin#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-margin#{$direction} {
+        margin#{$direction}: -map-get($spacing, $size) !important;
+      }
+    } @else {
+      .u-margin#{$direction}-#{$size} {
+        margin#{$direction}: map-get($spacing, $size) !important;
+      }
+
+      .u-undo-margin#{$direction}-#{$size} {
+        margin#{$direction}: -map-get($spacing, $size) !important;
+      }
+    }
+  }
+}
+
+@each $size in map-keys($spacing) {
+  .u-margin-#{$size} {
+    margin: map-get($spacing, $size) !important;
+  }
+
+  .u-undo-margin-#{$size} {
+    margin: -map-get($spacing, $size) !important;
+  }
+}
+
+@each $direction in $directions {
+  .u-margin#{$direction}-none {
+    margin#{$direction}: 0 !important;
+  }
+}
+
+.u-margin {
+  margin: spacing(base) !important;
+}
+
+.u-margin-top-large\@tablet {
+  @include media($tablet) {
+    margin-top: spacing(large) !important;
+  }
+}
+
+.u-margin-top-extrahuge\@tablet {
+  @include media($tablet) {
+    margin-top: spacing(extrahuge) !important;
+  }
+}
+
+.u-margin-top-giant\@desktop-large {
+  @include media($desktop-large) {
+    margin-top: spacing(giant) !important;
+  }
+}
+
+.u-margin-top-extragiant\@desktop-large {
+  @include media($desktop-large) {
+    margin-top: spacing(giant) !important;
+  }
+}
+
+.u-margin-right-extrasmall\@tablet {
+  @include media($tablet) {
+    margin-right: spacing(extrasmall) !important;
+  }
+}
+
+.u-margin-right-small\@tablet {
+  @include media($tablet) {
+    margin-right: spacing(small) !important;
+  }
+}
+
+.u-margin-right\@tablet {
+  @include media($tablet) {
+    margin-right: spacing(base) !important;
+  }
+}
+
+.u-undo-margin-right-extrahuge\@desktop {
+  @include media($desktop) {
+    margin-right: -spacing(extrahuge);
+  }
+}
+
+.u-undo-margin-right-giant\@desktop {
+  @include media($desktop) {
+    margin-right: -spacing(giant);
+  }
+}
+
+.u-undo-margin-right-giant\@desktop-large {
+  @include media($desktop-large) {
+    margin-right: -spacing(giant);
+  }
+}
+
+.u-margin-bottom-0 {
+  margin-bottom: 0 !important;
+}
+
+.u-margin-bottom-0\@desktop {
+  @include media($desktop) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.u-margin-bottom-extrasmall\@only-mobile {
+  @include media($only-mobile) {
+    margin-bottom: spacing(extrasmall) !important;
+  }
+}
+
+.u-margin-bottom-small\@only-mobile {
+  @include media($only-mobile) {
+    margin-bottom: spacing(small) !important;
+  }
+}
+
+.u-margin-bottom-small\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(small) !important;
+  }
+}
+
+.u-margin-bottom\@only-mobile {
+  @include media($only-mobile) {
+    margin-bottom: spacing(base) !important;
+  }
+}
+
+.u-margin-bottom\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(base) !important;
+  }
+}
+
+.u-margin-bottom-medium\@only-mobile {
+  @include media($only-mobile) {
+    margin-bottom: spacing(medium) !important;
+  }
+}
+
+.u-margin-bottom-medium\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(medium) !important;
+  }
+}
+
+.u-margin-bottom-large\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(large) !important;
+  }
+}
+
+.u-margin-bottom-huge\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(huge) !important;
+  }
+}
+
+.u-margin-bottom-huge\@desktop-large {
+  @include media($desktop-large) {
+    margin-bottom: spacing(huge) !important;
+  }
+}
+
+.u-margin-bottom-extrahuge\@tablet {
+  @include media($tablet) {
+    margin-bottom: spacing(extrahuge) !important;
+  }
+}
+
+.u-margin-bottom-none\@tablet {
+  @include media($tablet) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.u-margin-bottom-tiny\@desktop {
+  @include media($desktop) {
+    margin-bottom: spacing(tiny) !important;
+  }
+}
+
+.u-margin-bottom-tiny\@desktop-large {
+  @include media($desktop-large) {
+    margin-bottom: spacing(tiny) !important;
+  }
+}
+
+.u-margin-left-tiny\@tablet {
+  @include media($tablet) {
+    margin-left: spacing(tiny) !important;
+  }
+}
+
+.u-margin-left-medium\@desktop-large {
+  @include media($desktop-large) {
+    margin-left: spacing(medium) !important;
+  }
+}
+
+.u-undo-margin-top-large\@tablet {
+  @include media($tablet) {
+    margin-top: -spacing(large) !important;
+  }
+}
+
+.u-undo-margin-top-huge\@tablet {
+  @include media($tablet) {
+    margin-top: -spacing(huge) !important;
+  }
+}
+
+.u-undo-margin-top-extrahuge\@desktop-large {
+  @include media($desktop-large) {
+    margin-top: -spacing(extrahuge) !important;
+  }
+}
+
+.u-undo-margin-bottom-medium\@tablet {
+  @include media($tablet) {
+    margin-bottom: -spacing(medium) !important;
+  }
+}
+
+.u-undo-margin-bottom-extrahuge\@tablet {
+  @include media($tablet) {
+    margin-bottom: -spacing(extrahuge) !important;
+  }
+}
+
+.u-undo-margin-bottom-extrahuge\@desktop-large {
+  @include media($desktop-large) {
+    margin-bottom: -spacing(extrahuge) !important;
+  }
+}
+
+.u-margin-negativo {
+  margin-bottom: -100px;
+  @include media($tablet) {
+    margin-bottom: -130px;
+  }
+  @include media($desktop) {
+    margin-bottom: -590px;
+  }
+}

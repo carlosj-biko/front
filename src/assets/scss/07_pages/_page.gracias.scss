@@ -1,0 +1,65 @@
+.checkout-complete {
+  .form-group {
+    margin: 0;
+  }
+
+  .layout-checkout-form {
+    display: block;
+  }
+}
+
+.page-gracias {
+  text-align: center;
+  .checkout-pane-completion-message {
+    max-width: 100% !important;
+  }
+
+  a{
+    transition: all 2s;
+  }
+}
+
+.page-gracias-header {
+  background-image: url(/themes/custom/front/assets/images/bk-gracias-new.png);
+  background-size: cover;
+  min-height: 500px;
+}
+
+.checkout-complete-message {
+  max-width: 50%;
+  padding:spacing(huge) spacing(extrahuge);
+  box-shadow: 0 4px 5px 0px #A0A0A0;
+  margin: 0 auto;
+  background: #fff;
+  top:-390px;
+  position: relative;
+  @include media($only-mobile-tablet) {
+     max-width: 93%;
+  }
+    @include media($only-mobile-tablet) {
+       padding:spacing(base);
+    }
+}
+
+.section-thanks__num-block {
+   margin: spacing(base) 0 spacing(huge) 0;
+   overflow: visible;
+}
+
+.section-thanks__num {
+  background: $brand-color;
+  padding: spacing(small) spacing(base);
+  color: #fff;
+  display: inline-block;
+}
+
+.commerce-checkout-completion-registration {
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  top:-300px;
+  position: relative;
+  @include media($only-mobile-tablet) {
+     max-width: 93%;
+  }
+}

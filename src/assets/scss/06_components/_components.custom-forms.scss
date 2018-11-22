@@ -1,0 +1,22 @@
+.custom-control-label {
+  &::before {
+    box-shadow: 0 0 0 1px $input-border-color;
+  }
+}
+
+.custom-control-input {
+  &:checked ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px $orange-active;
+  }
+
+  &:active ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px $orange-active;
+  }
+}
+
+.custom-select {
+  height: $button-form-control-min-height;
+  @include media($desktop) {
+    min-height: $button-form-control-min-height-desktop;
+  }
+}

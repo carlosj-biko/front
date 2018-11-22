@@ -1,0 +1,70 @@
+/// Aplica a una propiedad de CSS un valor espécificio diferente para cada theme
+/// configurado a través de @themes
+/// @param {string} $property - Nombre de la propiedad a definir
+/// @param {string} $option - Valor de la propiedad a definir
+/// @param {string} $ubicacion - A qué nivel del elemento definir el theme.
+@mixin _theme-property-color($property, $option, $ubicacion: 'parent') {
+  @each $theme-name, $options in $themes {
+    $option-value: map-get($options, $option);
+
+    @if $ubicacion == 'parent' {
+      .theme-#{$theme-name} & {
+        #{$property}: $option-value;
+      }
+    }
+
+    @if $ubicacion == 'inline' {
+      &.theme-#{$theme-name} {
+        #{$property}: $option-value;
+      }
+    }
+
+    @if $ubicacion == 'before' {
+      .theme-#{$theme-name} &::before {
+        #{$property}: $option-value;
+      }
+    }
+
+    @if $ubicacion == 'inline-before' {
+      &.theme-#{$theme-name}::before {
+        #{$property}: $option-value;
+      }
+    }
+  }
+}
+
+/// Aplica un color de texto diferente para cada theme configurado a través de @themes
+/// @param {string} $ubicacion - A qué nivel del elemento definir el theme.
+@mixin theme-color($ubicacion: 'parent') {
+  @include _theme-property-color('color', 'color', $ubicacion);
+}
+
+/// Aplica un color de texto en base al color de fondo del subtema que tiene el elemento
+@mixin theme-readable-color-text() {
+  @each $theme-name, $options in $themes {
+    $option-value: map-get($options, 'color');
+
+    .theme-#{$theme-name} & {
+      color: readable-color-for($option-value);
+    }
+  }
+}
+
+/// Aplica un color de fondo diferente para cada theme configurado a través de @themes
+/// @param {string} $ubicacion - A qué nivel del elemento definir el theme.
+@mixin theme-background-color($ubicacion: 'parent') {
+  @include _theme-property-color('background-color', 'color', $ubicacion);
+}
+
+/// Aplica una imagen de fondo diferente para cada theme configurado a través de @themes
+/// @param {string} $option - Nombre de la clave de configuración donde obtener la ruta de la imagen
+/// @param {string} $ubicacion - A qué nivel del elemento definir el theme.
+@mixin theme-background-image($option, $ubicacion: 'parent') {
+  @include _theme-property-color('background-image', $option, $ubicacion);
+}
+
+/// Aplica un color de texto diferente para cada theme configurado a través de @themes
+/// @param {string} $ubicacion - A qué nivel del elemento definir el theme.
+@mixin theme-border-color($ubicacion: 'parent') {
+  @include _theme-property-color('border-color', 'color', $ubicacion);
+}

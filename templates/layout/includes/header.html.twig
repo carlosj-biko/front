@@ -1,0 +1,60 @@
+<header>
+  <div class="u-display-only-desktop-up u-background-color-secondary-95 u-padding-top-tiny u-padding-bottom-tiny">
+    <div class="container">
+      <div class="pre-header">
+        <p class="pre-header-text">{{ site_slogan }}</p>
+        <div class="list--general-options">
+          {{ page.pre_header }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header__logo-menu u-padding-top u-padding-bottom">
+    <div class="container">
+      <div class="u-display-flex u-align-items-end u-justify-content-space-between">
+        {% if site_logo %}
+          <a href="{{ path('<front>') }}" title="{{ 'AECC'|t }}" rel="home" class="header__logo">
+            <img src="{{ site_logo }}" alt="{{ 'AECC'|t }}" class="site-logo">
+          </a>
+        {% endif %}
+
+        <nav class="u-display-only-desktop-up site-nav">
+          {{ page.header }}
+        </nav>
+
+        <div class="cbp-spmenu-push">
+          <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+            <div class="cbp-spmenu__content">
+              <a id="closeRightPush">
+                <span class="icon hamburger__icon hamburger__icon--close">
+                  {{ source('/themes/custom/front/assets/images/icons/close.svg', ignore_missing = true) }}
+                </span>
+              </a>
+              <div class="cbp-spmenu__link">
+                {{ page.header }}
+              </div>
+              <div class="cbp-spsubmenu__link">
+                {{ page.pre_header }}
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <div class="main">
+              <section>
+                <div class="menu-movil">
+                  {{ drupal_block('aecc_cart', {dropdown: TRUE}, wrapper=false) }}
+                  <!-- Class "cbp-spmenu-open" gets applied to menu -->
+                  <button id="showRightPush">
+                    <span class="icon hamburger__icon hamburger__icon--hamburger">
+                      {{ source('/themes/custom/front/assets/images/icons/_hamburger.svg', ignore_missing = true) }}
+                    </span>
+                  </button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
