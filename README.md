@@ -1,4 +1,4 @@
-# Cog: Acquia D8 Theme
+# Front: Biko2 D8 Theme (based on COG)
 
 * [Installation](#installation)
   * [Create Cog Sub-Theme](#create-cog-sub-theme)
@@ -18,28 +18,17 @@
 
 ## Installation
 
-The Cog theme is set up to utilize the `base => sub-theme` relationship. The steps below will create your custom sub-theme that is cloned from `STARTERKIT/` folder, along with installing the proper dependencies to setup in a matter of minutes. This approach supports release updates, in addition to providing source references for required and optional pieces.
+Instalar el tema principal.
+```
+composer require 'drupal/cog'
+```
+Descargar este theme e incluirlo en el proyecto.
 
-### Create Cog Sub-Theme
 
-* In your `themes/` directory create the `contrib/` and `custom/` directories
-* Download Cog into the `themes/contrib` folder and enable using `drush en cog`
-* Create the sub-theme with `drush cog "MyTheme"` (if you'd like to customize, first run `drush help cog` to see available options)
-* Enable your new `MyTheme` theme with `drush en mytheme` which is located in `themes/custom`
-* Set `MyTheme` as your default theme `drush config-set system.theme default mytheme`
 
 ### Setup Local Development
 
-Once you have created a custom sub-theme, you will setup for local compiling. If you would like to review a more detailed explanation of these steps, read the [full setup readme](_readme/setup-full.md).
-
-* Navigate to `themes/custom/mytheme` folder in your terminal
-* Install Node.js with `./install-node.sh 8.9.1` and then point to the proper version with `source ~/.bashrc && nvm use --delete-prefix 8.9.1` 
-  * (optional) If you are not using avn then run `nvm use 8.9.1` when closing and reopening your session
-  * (optional) If you choose to use avn follow the instructions [here](_readme/setup-full.md#avn)
-* Run the command `npm install` within your `themes/custom/mytheme` folder
-* Install the [Gulp](http://gulpjs.com/) build tool globally using `npm install -g gulp-cli`.
-* To confirm Gulp and other items are instantiated `npm run build`
-* You can now compile both your Sass and JS with `gulp watch`
+Hay que instalar node y ruby para preparar las herramientas. TODO: poner notas para hacerlo.
 
 ## Theme Overview
 
@@ -57,21 +46,21 @@ Cog is created with the intent of being used as a traditional base theme. By fol
 ```
 contrib/ (theme folder)
 |-- cog/
-|---- STARTERKIT/ 
+|---- STARTERKIT/
 
 custom/ (theme folder)
-|-- mytheme/ (cloned from starterkit) 
+|-- mytheme/ (cloned from starterkit)
 ```
 
 ### Folder Structure
 
 ```
-|-- css/  (generated css) 
+|-- css/  (generated css)
 |-- gulp-tasks/ (modular gulp task files)
 |-- images/  (theme images)
 |-- js/  (compiled js)
 |-- sass/  (SMACSS based sass setup)
-|-- gulpfile.js  (configured gulp file) 
+|-- gulpfile.js  (configured gulp file)
 |-- install-node.sh (bash script to install nvm and node)
 |-- logo.png (placeholder logo png file)
 |-- logo.svg (placeholder logo svg file)
@@ -104,20 +93,20 @@ sass/
 ```
 
 * **\_config.scss** this configuration is housing common mixins, variables, or similar, normally you would want to break these out in separate partials
-* **styles.scss**  the manifest file that imports all the partials or folders with globbing 
+* **styles.scss**  the manifest file that imports all the partials or folders with globbing
 * **base/** intended as the baseline pstyles that you extend upon and will include things like resets, global typography, or common form selectors.
 * **layout/**  for structural layout that can apply to both the outer containers like the sidebars or headers, but also on inner structural pieces.
 * **components/** these module files are the reusable or component parts of our design.
 * **state/** modules will adjust when in a particular state, in regards to targeting how changes happen on contextual alterations for regions or similar  
 * **style-guide-only/** contains homepage.md which provides the content for the Overview section of the styleguide, and kss-only.scss which generates a css file for styling needed by a component for display in the style guide, but not loaded into the actual theme  
 
-### Gulp 
+### Gulp
 
 The Gulp installation and tasks are setup to work on install, but are still intended to be easily updated based on project needs. The tasks are declared in `gulpfile.js` and broken out within the `gulp-tasks/` subfolder. You can list the available Gulp tasks with `gulp --tasks`. The most common gulp task is `gulp watch` when developing locally, which covers Sass compiling, JS linting, and building dynamic styleguides.  
 
 ### JavaScript
 
-An example JS file `theme.js` is added by default in the `js/` folder. This file contains sample code wrapped in the `Drupal.behaviors` code standard. This JS file is added to the theme with the following portion of the code from `[theme-name].libraries.yml`. Cog does not have compression enabled for Gulp since it is relying on Drupal's caching system. 
+An example JS file `theme.js` is added by default in the `js/` folder. This file contains sample code wrapped in the `Drupal.behaviors` code standard. This JS file is added to the theme with the following portion of the code from `[theme-name].libraries.yml`. Cog does not have compression enabled for Gulp since it is relying on Drupal's caching system.
 
 ```
 lib:
@@ -149,13 +138,13 @@ regions:
 
 ![regions](http://content.screencast.com/users/BedimStudios/folders/Jing/media/8ad8ecf1-bb60-4292-80b0-115fae8daac0/00001643.png)
 
-### Images 
+### Images
 
 The images designated for your custom theme can be placed in the `images/` folder. By default we do not have compression setup with subfolder, but do highly recommend based on need. Image compression and spriting requires vast differences with the amount images and this can be a task-intensive process for Gulp and automated builds. However for most of our builds, we do utilize both image compression and spriting with the standard subfolders with Gulp automation workflow: `images/src/` `images/dist/`
 
 ## Further Documentation
 
-Cog also ships with an extensive list of documentation and code samples that which were intentionally left out of the theme. 
+Cog also ships with an extensive list of documentation and code samples that which were intentionally left out of the theme.
 We have collected all the examples in an easy reference [listed here](_theming-guide/readme.md).
 
 ## Build Notes
