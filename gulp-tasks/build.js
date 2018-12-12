@@ -9,34 +9,35 @@ module.exports = function (gulp, plugins, options) {
   'use strict';
   plugins.runSequence.options.showErrorStackTrace = false;
 
-  gulp.task('build', function(cb) {
-    plugins.runSequence(
+  gulp.task('build', function(done) {
+    gulp.series(
       'compile:sass',
       'compile:js',
       'compile:vendorjs',
       'images',
-      ['minify:css',
-        'minify:js',
-        /*'compile:styleguide'*/],
-      [/*'lint:js',
+      gulp.series('minify:css',
+        'minify:js'),
+        /*'compile:styleguide',*/
+      gulp.series(/*'lint:js',
         'lint:js-gulp',*/
         'lint:js-with-fail',
-        'lint:css-with-fail'] ,
-      cb);
+        'lint:css-with-fail'));
+      done();
   });
 
   gulp.task('build:dev', function(cb) {
-    plugins.runSequence(
+    gulp.series(
       'compile:sass',
       'compile:js',
       'compile:vendorjs',
       'images',
-      ['minify:css',
+      gulp.series('minify:css',
         'minify:js',
-        /*'compile:styleguide'*/],
-      [/*'lint:js-gulp',
+      /*'compile:styleguide'*/),
+      gulp.series(/*'lint:js-gulp',
         'lint:js',*/
-        'lint:css'],
-      cb);
+        'lint:css'));
+
+      cb();
   });
 };

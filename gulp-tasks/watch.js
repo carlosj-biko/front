@@ -8,13 +8,13 @@
 module.exports = function (gulp, plugins, options) {
   'use strict';
 
-  gulp.task('watch', ['watch:sass', /*'watch:styleguide',*/ 'watch:js', 'watch:images', 'watch:jekyll']);
+
 
   gulp.task('watch:js', function () {
     return gulp.watch([
       options.js.files
     ], function () {
-      plugins.runSequence(
+      gulp.series(
         //'lint:js',
         'compile:js',
         'minify:js',
@@ -28,7 +28,7 @@ module.exports = function (gulp, plugins, options) {
     return gulp.watch([
       options.sass.files
     ], function () {
-      plugins.runSequence(
+      gulp.series(
         'compile:sass',
         'minify:css',
         'browser-sync:reload'
@@ -40,7 +40,7 @@ module.exports = function (gulp, plugins, options) {
     return gulp.watch([
       options.images.files
     ], function () {
-      plugins.runSequence(
+      gulp.series(
         'images',
         'browser-sync:reload'
       );
@@ -61,10 +61,11 @@ module.exports = function (gulp, plugins, options) {
     return gulp.watch([
       options.jekyll.files
     ], function () {
-      plugins.runSequence(
+      gulp.series(
         'jekyll',
         'browser-sync:reload'
       );
     });
   });
+  gulp.task('watch', gulp.parallel('watch:sass', /*'watch:styleguide',*/ 'watch:js', 'watch:images', 'watch:jekyll'));
 };
