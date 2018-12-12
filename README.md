@@ -25,11 +25,24 @@ composer require 'drupal/cog'
 Descargar este theme e incluirlo en el proyecto.
 
 
-
 ### Setup Local Development
 
 Hay que instalar node y ruby para preparar las herramientas. TODO: poner notas para hacerlo.
+Desde la carpeta del theme (theme/custom/front) instalar los modulos de cada herramienta.
+```
+bundle install
+npm install
+```
 
+## Ejecutar herramientas
+Para compilar todo.
+```
+gulp
+```
+Para tenerlo lanzado y que recompile cuando cambiamos los archivos.
+```
+gulp watch
+```
 ## Theme Overview
 
 Cog is a developer-focused base theme and starterkit created by Acquia's Professional Service Front-end Team. It is intended as a minimalistic baseline for custom theming, while exposing common tools and workflows. Cog provides a small amount of code to get started, but is still packed with utilities to extend.

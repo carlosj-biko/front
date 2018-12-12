@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "gulp-cli": "^2.0.1",
     "include-media": "1.4.9",
     "jekyll": "^3.0.0-beta1",
     "jquery": "^3.3.1",
