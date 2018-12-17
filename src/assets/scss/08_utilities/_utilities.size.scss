@@ -1,9 +1,0 @@
-.u-width-100 {
-  width: 100% !important;
-}
-
-.u-height-100\@tablet {
-  @include media($tablet) {
-    height: 100% !important;
-  }
-}
