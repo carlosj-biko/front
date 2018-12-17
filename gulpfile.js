@@ -223,8 +223,8 @@ var options = {
       // For testing in a travis environment:
       // 'http://127.0.0.1:8888',
       // 'http://127.0.0.1:8888/themes/custom/yourtheme/styleguide'
-      'http://tienda.aecc.docker:8000',
-      'http://tienda.aecc.docker:8000/node/1'
+      'http://localhost:8000',
+      'http://localhost:8000/node/1'
     ],
     failOnError: true, // fail the build on error
     showFailedOnly: true, // show errors only and override reporter
@@ -255,7 +255,7 @@ var options = {
 
 // Tasks
 require('./gulp-tasks/browser-sync')(gulp, plugins, options);
-require('./gulp-tasks/build')(gulp, plugins, options);
+require('./gulp-tasks/images')(gulp, plugins, options);
 require('./gulp-tasks/clean-css')(gulp, plugins, options);
 require('./gulp-tasks/clean-js')(gulp, plugins, options);
 require('./gulp-tasks/clean-styleguide')(gulp, plugins, options);
@@ -263,17 +263,17 @@ require('./gulp-tasks/clean')(gulp, plugins, options);
 require('./gulp-tasks/compile-sass')(gulp, plugins, options);
 require('./gulp-tasks/compile-js')(gulp, plugins, options);
 require('./gulp-tasks/compile-styleguide')(gulp, plugins, options);
-require('./gulp-tasks/default')(gulp, plugins, options);
 require('./gulp-tasks/jekyll')(gulp, plugins, options);
 require('./gulp-tasks/lint-js')(gulp, plugins, options);
 require('./gulp-tasks/lint-css')(gulp, plugins, options);
 require('./gulp-tasks/minify-css')(gulp, plugins, options);
 require('./gulp-tasks/minify-js')(gulp, plugins, options);
+require('./gulp-tasks/build')(gulp, plugins, options);
 require('./gulp-tasks/watch')(gulp, plugins, options);
 require('./gulp-tasks/serve')(gulp, plugins, options);
-
+require('./gulp-tasks/default')(gulp, plugins, options);
 //require('./gulp-tasks/pa11y')(gulp, plugins, options);
-require('./gulp-tasks/images')(gulp, plugins, options);
+
 
 // Credits:
 //
