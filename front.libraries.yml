@@ -6,11 +6,6 @@ global_styles:
   js:
      assets/js/vendor.js: { weight: -1000 }
      assets/js/app.js: {}
-     assets/js/classie.js: {}
-     js/header_responsive.js: {}
-     js/open_pack_cupon.js: {}
-     js/label_to_placeholder.js: {}
-     js/scroll_to_anchor.js: {}
   dependencies:
   - core/jquery.once
   - core/drupal
