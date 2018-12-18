@@ -205,7 +205,7 @@ var options = {
       paths.styles.source
     ],
     builder: 'builder/twig',
-    destination: 'styleguide/',
+    destination: 'assets/styleguide/',
     css: [
       path.relative(paths.styleGuide, paths.styles.destination + 'styles.css'),
       path.relative(paths.styleGuide, paths.styles.destination + 'style-guide-only/kss-only.css')

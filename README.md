@@ -43,6 +43,10 @@ Para tenerlo lanzado y que recompile cuando cambiamos los archivos.
 ```
 gulp watch
 ```
+Para arrancar el servidor de desarrollo y ver las paginas de ejemplo. Recompila cuando cambiamos los archivos.
+```
+gulp serve
+```
 ## Theme Overview
 
 Starter theme for Biko2 proyects.

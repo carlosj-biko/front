@@ -47,5 +47,5 @@ module.exports = function (gulp, plugins, options) {
   });
 
 
-  gulp.task('watch', gulp.parallel('watch:sass', /*'watch:styleguide',*/ 'watch:js', 'watch:images', 'watch:jekyll'));
+  gulp.task('watch', gulp.parallel('watch:sass', 'watch:styleguide', 'watch:js', 'watch:images', 'watch:jekyll'));
 };
