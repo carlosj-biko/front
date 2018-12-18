@@ -81,7 +81,7 @@ custom/ (theme folder)
 |-- theme-settings.php (file to use for making theme settings available in the GUI)
 ```
 
-### Sass Structure (BEM atomic)
+### Sass Structure
 
 BEM & Atomic design structure.
 ```
@@ -97,6 +97,8 @@ sass/
   |-- style.scss
 ```
 
+[BEM - Atomic documentation] (https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving)
+
 * **styles.scss**  the manifest file that imports all the partials or folders with globbing
 
 ### Gulp
@@ -105,7 +107,7 @@ The Gulp installation and tasks are setup to work on install, but are still inte
 
 ### JavaScript
 
-An example JS file `theme.js` is added by default in the `js/` folder. This file contains sample code wrapped in the `Drupal.behaviors` code standard. This JS file is added to the theme with the following portion of the code from `[theme-name].libraries.yml`. Cog does not have compression enabled for Gulp since it is relying on Drupal's caching system.
+An example JS file `app.js` is added by default in the `js/` folder. This file contains sample code wrapped in the `Drupal.behaviors` code standard. This JS file is added to the theme with the following portion of the code from `[theme-name].libraries.yml`. Cog does not have compression enabled for Gulp since it is relying on Drupal's caching system.
 
 ```
 lib:
