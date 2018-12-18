@@ -123,18 +123,16 @@ var options = {
   browserSync: {
     // Put your local site URL here to prevent Browsersync
     // from prompting you to add additional scripts to your page.
-    //proxy: {
-    //   target: 'http://www.local.aecc.com/'
-    //},
     // open: 'external',
     //xip: true,
     //logConnections: true
 
     server: {baseDir: ['assets']},
+    startPath: "/pages",
     port: 3000,
     online: false,
 
-    open: false,
+    open: true,
     //ghostMode: false,
     logConnections: true,
   },
