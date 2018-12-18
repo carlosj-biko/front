@@ -8,7 +8,7 @@
 module.exports = function (gulp, plugins, options) {
   'use strict';
 
-  gulp.task('minify:css', function () {
+  gulp.task('minify:css', function (cb) {
     return gulp.src([
       options.css.files,
       '!' + options.css.destination + '**/*.min.css'
@@ -18,5 +18,6 @@ module.exports = function (gulp, plugins, options) {
       }))
       .pipe(plugins.cleanCSS({compatibility: 'ie8'}))
       .pipe(gulp.dest(options.css.destination));
+      cb();
   });
 };

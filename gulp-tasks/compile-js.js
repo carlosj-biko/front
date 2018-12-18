@@ -21,7 +21,9 @@ module.exports = function (gulp, plugins, options) {
       .pipe(plugins.sourcemaps.write())
       .pipe(plugins.plumber.stop())
       .pipe(plugins.concat('app.js'))
-      .pipe(gulp.dest(options.js.destination));
+      .pipe(gulp.dest(options.js.destination))
+      .pipe(plugins.notify("Compilación JS terminada"));
+
   });
 
   gulp.task('compile:vendorjs', function () {
@@ -29,7 +31,9 @@ module.exports = function (gulp, plugins, options) {
     return gulp.src(
       options.js.vendorFiles
     )
+      .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error compilando VENDORS JS') }))
       .pipe(plugins.concat('vendor.js'))
-      .pipe(gulp.dest(options.js.destination));
+      .pipe(gulp.dest(options.js.destination))
+      .pipe(plugins.notify("Compilación VENDORS JS terminada"));
   });
 };

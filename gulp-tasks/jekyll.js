@@ -12,16 +12,14 @@ module.exports = function (gulp, plugins, options) {
 
 
   // Clean CSS files.
-  gulp.task('jekyll', function () {
+  gulp.task('jekyll', function (cb) {
     const resultCode = shell.exec('jekyll build').code;
 
     if (resultCode !== 0) {
-      notifier.notify({
-        'title': 'Error',
-        'message': 'Error compilando JEKYLL',
-        icon: path.join(__dirname, '../../node_modules/gulp-notify/assets/gulp-error.png'),
-      });
+      plugins.notify("ERROR JEKYLL")
+    } else {
+        plugins.notify("Compilación JEKYLL terminada");
     }
+    cb();
   });
 };
-

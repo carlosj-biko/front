@@ -39,7 +39,11 @@ title: Índice de páginas
     <h1 class="p-guide__title">Páginas disponibles</h1>
 
     <ul>
-    
+      {% for my_page in site.pages %}
+      {% if my_page.title %}
+      <li><a href="/pages{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+      {% endif %}
+    {% endfor %}
     </ul>
 
   </div>

@@ -8,7 +8,7 @@
 module.exports = function (gulp, plugins, options) {
   'use strict';
 
-  gulp.task('compile:sass', function () {
+  gulp.task('compile:sass', function (cb) {
     return gulp.src([
       options.sass.files
     ])
@@ -25,6 +25,8 @@ module.exports = function (gulp, plugins, options) {
         cascade: false
       }))
       .pipe(plugins.sourcemaps.write())
-      .pipe(gulp.dest(options.sass.destination));
+      .pipe(gulp.dest(options.sass.destination))
+      .pipe(plugins.notify("Compilación CSS terminada"));
+      cb();
   });
 };

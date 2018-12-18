@@ -10,62 +10,42 @@ module.exports = function (gulp, plugins, options) {
 
 
 
-  gulp.task('watch:js', function () {
-    return gulp.watch([
-      options.js.files
-    ], function () {
-      gulp.series(
-        //'lint:js',
-        'compile:js',
-        'minify:js',
-        //'lint:css',
-        'browser-sync:reload'
-      );
-    });
-  });
+  gulp.task('watch:js'
+    , function () {
+        return gulp.watch([options.js.files],gulp.series(
+              'lint:js',
+              'compile:js',
+              'minify:js',
+              //'lint:css',
+              'browser-sync:reload'
+            ));
 
-  gulp.task('watch:sass', function () {
-    return gulp.watch([
+    });
+
+  gulp.task('watch:sass', function (cb) {
+    gulp.watch(
       options.sass.files
-    ], function () {
-      gulp.series(
+    , gulp.series(
+        //'lint:css',
         'compile:sass',
         'minify:css',
         'browser-sync:reload'
-      );
+      ));
+      cb();
     });
-  });
 
   gulp.task('watch:images', function () {
-    return gulp.watch([
-      options.images.files
-    ], function () {
-      gulp.series(
-        'images',
-        'browser-sync:reload'
-      );
-    });
+    return gulp.watch( options.images.files,gulp.series('images','browser-sync:reload'));
   });
 
   gulp.task('watch:styleguide', function () {
-    return gulp.watch([
-      options.sass.files
-    ], function () {
-      plugins.runSequence(
-        /*'compile:styleguide'*/
-      );
-    });
+    return gulp.watch(options.sass.files,gulp.series('compile:styleguide'));
   });
 
   gulp.task('watch:jekyll', function () {
-    return gulp.watch([
-      options.jekyll.files
-    ], function () {
-      gulp.series(
-        'jekyll',
-        'browser-sync:reload'
-      );
-    });
+    return gulp.watch(options.jekyll.files,gulp.series('jekyll','browser-sync:reload'));
   });
+
+
   gulp.task('watch', gulp.parallel('watch:sass', /*'watch:styleguide',*/ 'watch:js', 'watch:images', 'watch:jekyll'));
 };
