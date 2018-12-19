@@ -5,8 +5,8 @@ front.screen-xs-max:
   multipliers:
     - 1x
     - 2x
-front.screen-sm-max:
-  label: screen-xs-max
+front.screen-sm-min:
+  label: screen-xs-min
   mediaQuery: 'all and (min-width: 576px)'
   weight: 1
   multipliers:
