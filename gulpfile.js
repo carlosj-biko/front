@@ -12,4 +12,4 @@ if (fs.existsSync('./gulpfile.custom.configs.js')) {
     customOptions = require('./gulpfile.custom.options.js');
 }
 
-require('../gulp-tasks-front')(gulp,customPaths,customOptions);
+require('gulp-tasks-front')(gulp,customPaths,customOptions);
