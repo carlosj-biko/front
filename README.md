@@ -30,7 +30,6 @@ Descargar este theme e incluirlo en el proyecto.
 Hay que instalar node y ruby para preparar las herramientas. TODO: poner notas para hacerlo.
 Desde la carpeta del theme (theme/custom/front) instalar los modulos de cada herramienta.
 ```
-bundle install
 npm install
 ```
 
@@ -42,7 +41,18 @@ gulp
 Para tenerlo lanzado y que recompile cuando cambiamos los archivos.
 ```
 gulp watch
+
 ```
+Para lanzar el entorno de desarrollo con live reload.
+```
+gulp serve
+```
+
+Para compilar solo SASS, JS y las páginas.
+```
+gulp build:dev
+```
+
 ## Theme Overview
 
 Starter theme for Biko2 proyects.
