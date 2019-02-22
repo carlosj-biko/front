@@ -8,7 +8,7 @@ var fs = require('fs');
 if (fs.existsSync('./gulpfile.custom.paths.js')) {
     customPaths = require('./gulpfile.custom.paths.js');
 }
-if (fs.existsSync('./gulpfile.custom.configs.js')) {
+if (fs.existsSync('./gulpfile.custom.options.js')) {
     customOptions = require('./gulpfile.custom.options.js');
 }
 
