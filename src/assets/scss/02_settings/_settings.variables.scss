@@ -20,24 +20,24 @@
 */
 
 // breakpoints de bootstrap
-$grid-breakpoints: (
+/*$grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
   xxl: 1400px
-);
+);*/
 
-$container-max-widths: (
+/*$container-max-widths: (
   sm: none,
   md: none,
   lg: none,
   xl: 1440px
-);
+);*/
 
 
-$grid-columns: 12;
+/*$grid-columns: 12;
 $grid-gutter-widths: (
   xs: 10px,
   sm: 15px,
@@ -55,9 +55,9 @@ $breakpoints: (
   xl: map-get($grid-breakpoints, xl),
   xxl: map-get($grid-breakpoints, xxl)
 );
-
+*/
 // breakpoint aliases
-$mobile-large: '>=sm';
+/*$mobile-large: '>=sm';
 $tablet: '>=md';
 $desktop: '>=lg';
 $desktop-large: '>=xl';
@@ -66,7 +66,7 @@ $only-mobile-small: '<sm';
 $only-mobile: '<md';
 $only-mobile-tablet: '<lg';
 $only-down-desktop: '<xl';
-
+*/
 /*
 ===========================================
 == fuentes ================================

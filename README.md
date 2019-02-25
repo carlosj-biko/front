@@ -1,18 +1,18 @@
 # Front: Biko2 D8 Theme (based on COG)
 
-* [Installation](#installation)
-  * [Create Cog Sub-Theme](#create-cog-sub-theme)
-  * [Setup Local Development](#setup-local-development)
-* [Theme Overview](#overview)
-  * [Folder Structure](#folder-structure)
-  * [Sass Structure](#sass-structure)
-  * [Gulp](#gulp)
-  * [JavaScript](#javascript)
-  * [Grid System](#grid-system)
-  * [Theme Regions](#theme-regions)
-  * [Images](#images)
-* [Further Documentation](#further-documentation)
-* [Build Notes](#build-notes)
+- [Front: Biko2 D8 Theme (based on COG)](#front-biko2-d8-theme-based-on-cog)
+  - [Installation](#installation)
+    - [Setup Local Development](#setup-local-development)
+  - [Ejecutar herramientas](#ejecutar-herramientas)
+  - [Tasks](#tasks)
+  - [Theme Overview](#theme-overview)
+    - [Folder Structure](#folder-structure)
+    - [Sass Structure](#sass-structure)
+    - [Gulp](#gulp)
+    - [JavaScript](#javascript)
+    - [Images](#images)
+  - [Further Documentation](#further-documentation)
+  - [Build Notes](#build-notes)
 
 ---
 
@@ -27,7 +27,7 @@ Descargar este theme e incluirlo en el proyecto.
 
 ### Setup Local Development
 
-Hay que instalar node y ruby para preparar las herramientas. TODO: poner notas para hacerlo.
+Hay que instalar nodejs para preparar las herramientas. TODO: poner notas para hacerlo.
 Desde la carpeta del theme (theme/custom/front) instalar los modulos de cada herramienta.
 ```
 npm install
@@ -53,6 +53,9 @@ Para compilar solo SASS, JS y las páginas.
 gulp build:dev
 ```
 
+## Tasks
+> Based on [gulp-tasks-front](https://github.com/biko2/gulp-tasks-front)
+
 ## Theme Overview
 
 Starter theme for Biko2 proyects.
@@ -75,7 +78,7 @@ custom/ (theme folder)
 |-- src/assets/images/  (image sources)
 |-- src/assets/fonts/  (font sources)
 |-- src/assets/scss/  (SMACSS based sass setup)
-|-- gulp-tasks/ (modular gulp task files)
+|-- src/assets/twigPages/  (Twig based pages)
 |-- gulpfile.js  (configured gulp file)
 |-- install-node.sh (bash script to install nvm and node)
 |-- *logo.png (placeholder logo png file)
