@@ -1,12 +1,13 @@
-{% extends "layouts/html.twig" %}
+{% extends "layouts/page.twig" %}
+{% set title = "Home" %}
 
 {% block content %}
-<h3>{{ pageTitle }}</h3>
 
-<ul>
-    {% for value in benefits %}
-        <li>{{ value }}</li>
-    {% endfor %}
-</ul>
-{{html}}
+    <h3>{{ pageTitle }}</h3>
+
+    <ul>
+        {% for value in benefits %}
+            <li>{{ value }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
