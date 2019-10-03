@@ -5,6 +5,5 @@ package-lock.json
 gulpfile.custom.paths.js
 gulpfile.custom.options.js
 
-assets
 
 generated.libraries.yml
